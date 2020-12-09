@@ -1,0 +1,3 @@
+[CHAT WINDOW TEXT] [Wed Nov 25 11:23:13] The Great Wandering Wicked Solar attacks Dwarf Elite Axeman : *hit* : (13 + 58 = 71)
+[CHAT WINDOW TEXT] [Wed Nov 25 11:23:13] The Great Wandering Wicked Solar attacks Dwarf Elite Axeman : *critical hit* : (18 + 53 = 71 : Threat Roll: 4 + 53 = 57)
+[CHAT WINDOW TEXT] [Wed Nov 25 11:23:13] The Great Wandering Wicked Solar damages Dwarf Elite Axeman: 41 (23 Physical 10 Electrical 8 Fire)
