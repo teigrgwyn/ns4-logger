@@ -1,0 +1,9 @@
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Creature CR: 33.00
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Experience Points Gained:  598
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Morggatine Lightbeard killed Dwarf Guard
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Creature CR: 35.00
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Experience Points Gained:  598
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Morggatine Lightbeard killed Elite Axeman
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Creature CR: 35.00
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Experience Points Gained:  598
+[CHAT WINDOW TEXT] [Wed Nov 25 11:04:07] Morggatine Lightbeard killed Dwarf Elite Guard
