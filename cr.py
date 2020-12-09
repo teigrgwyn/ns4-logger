@@ -25,16 +25,6 @@ for line in open('input.txt'):
     elif ((gCombatRating == None) and (re.search("Creature CR: ", line))):
         gCombatRating = int(re.split(r'\.', re.split("Creature CR: ", line)[1])[0]) # converts CR to int for ease of access in dict later
 
-#gCRlist = []
-#for key in gCRdict.keys():
-#    gCRlist.append(key)
-#    gCRlist.append(gCRdict.get(key))
-
-#print(gCRlist[0] + ': ' + str(gCRlist[1]))
-#print(len(gCRlist))
-
-#i = 0
-#while (i < len(gCRlist)):
-#    print(gCRlist[i] + ': ' + str(gCRlist[i+1]))
-#    i+2
-#*/
+print('Print of NPC CRs:')
+for name, cr in gCRdict.items():
+    print('    {}: {}'.format(name, cr))
