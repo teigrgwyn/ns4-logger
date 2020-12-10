@@ -17,17 +17,19 @@ gAttackPenalty = 0
 for line in open('ab/input.txt'):
     # remove non-essentials from line
     line = re.sub(r'^\[CHAT WINDOW TEXT\] \[(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-2][0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9]\] ', '', line)
-    line.strip(r'\r\n')
+    line = re.sub('\n', '', line)
 
     attacker = None
 
-    # r'attacks .+ : \*((critical )?hit|miss)\* : \([1-2]?[0-9] (+|-) [0-9]?[0-9] = (-)?[0-9]?[0-9]\
-    temp = r'attacks .+ : \*((critical )?hit|miss)\*'
+    # r'attacks .+ : \*((critical )?hit|miss)\* : \([1-2]?[0-9] (+|-) [0-9]?[0-9] = (-)?[0-9]?[0-9]\)'
+    temp = r'attacks .+ : \*critical hit|hit|miss\* : \([1-2]?[0-9] +|- [0-9]?[0-9] = (-)?[0-9]?[0-9]\)'
     if re.search(temp, line):
-        line = re.split(r' attacks .+ : \*(hit|critical hit|miss)\* : \([1-2]?[0-9] ', line)
+        line = re.split(r' attacks .+ : \*(critical hit|hit|miss)\* : \([1-2]?[0-9] (\+|\-) ', line) # not sure why python extracts the string between parenthesis, but we'll deal with it for now
         attacker = line[0]
-        #gAttackBonus = re.split(r'')
+        gAttackBonus = re.split(r' = ', line[3])[0]
         print(line)
+        print(attacker)
+        print(gAttackBonus)
 
     #attacker = None
     # if we keep regex very clear during the searches, we can be loose within the block

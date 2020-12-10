@@ -15,7 +15,7 @@ gCombatRating = None
 for line in open('cr/input.txt'):
     # remove non-essentials from line
     line = re.sub(r'^\[CHAT WINDOW TEXT\] \[(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-2][0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9]\] ', '', line)
-    line.strip(r'\r\n')
+    line = re.sub('\n', '', line)
 
     # we're expecting a 'killed' message, it exists, and the attacker is known
     if ((gCombatRating != None) and (re.search('killed', line)) and (re.split(' killed ', line)[0] != 'Someone')):
