@@ -11,3 +11,29 @@
 #   Construct Shape - Stone Golem - Knockdown Bolt
 #       r' attempts Ranged Touch Attack on '
 #       -> match save line regex
+
+import re 
+
+gSavingThrowDict = {}
+gSavingThrow = None
+
+gActiveSearch = None
+
+for line in open('cr/input.txt'):
+    # remove non-essentials from line
+    line = re.sub(r'^\[CHAT WINDOW TEXT\] \[(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-2][0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9]\] ', '', line)
+    line = re.sub('\n', '', line)
+
+    def switch(param):
+        active = {
+            1: r' attempts Ranged Touch Attack on (.+) : ',
+            2: r''
+        }
+
+    if (re.search(r' attempts Ranged Touch Attack on .+ : \*((critical )?hit|miss)\* : \([1-2]?[0-9] +|- [0-9]?[0-9] = (-)?[0-9]?[0-9]\)', line)):
+        gActiveSearch = 1
+    elif (re.search(r'', line)):
+        gActiveSearch = 2
+
+for key, value in sorted(gSavingThrowDict.items()):
+    print('{} : {}'.format(key, value))
