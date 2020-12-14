@@ -18,21 +18,46 @@ gSavingThrowDict = {}
 gSavingThrow = None
 
 gActiveSearch = None
+gSearchString = None
+
+gSpellDescriptorDict = {
+    
+}
+    vs. Spells
+    -
+    vs. Death
+    vs. Fear
+    vs. Mind-affecting
+    -
+    vs. Acid
+    vs. Cold
+    vs. Electricity
+    vs. Fire
+    vs. Sonic
+    -
+    vs. Disease
+    vs. Poison
+    -
+    vs. Divine
+    vs. Positive
+    vs. Negative
+    -
+    vs. Good
+    vs. Evil
+    vs. Lawful
+    vs. Chaotic
 
 for line in open('cr/input.txt'):
     # remove non-essentials from line
     line = re.sub(r'^\[CHAT WINDOW TEXT\] \[(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) [0-2][0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9]\] ', '', line)
     line = re.sub('\n', '', line)
 
-    def switch(param):
-        active = {
-            1: r' attempts Ranged Touch Attack on (.+) : ',
-            2: r''
-        }
+    if (gActiveSearch == 1): gSearchString = r' attempts Ranged Touch Attack on (.+) : '
+    elif (gActiveSearch == 1): gSearchString = r' attempts Ranged Touch Attack on (.+) : '
 
     if (re.search(r' attempts Ranged Touch Attack on .+ : \*((critical )?hit|miss)\* : \([1-2]?[0-9] +|- [0-9]?[0-9] = (-)?[0-9]?[0-9]\)', line)):
         gActiveSearch = 1
-    elif (re.search(r'', line)):
+    elif (re.search(r' attacks .+ : ', line)):
         gActiveSearch = 2
 
 for key, value in sorted(gSavingThrowDict.items()):
